@@ -1,0 +1,165 @@
+﻿<!doctype html>
+
+<head>
+
+    <!--produit<meta name="Description" CONTENT="Auteur : Charles Auteur ; Illustrateur : Pierre Dessin ; Catégorie : Ouvrages ; Prix : 9,24 £ ; Longueur : 784 pages">!-->
+    <meta name="keywords" content="rent a man, employer, location,service,ampe,pole emploi,..." />
+	<meta name="description" content="Chez [Rent-a-worker] nous rassemblons des travailleurs aux qualifications variées, issus d'horizons diverses afin de vous fournir celui qui correspond  précisement à vos besoins." />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=false;">
+	<link rel="stylesheet" type="text/css" href="../STYLE/style.css" media="screen" />
+	<meta name="author" content="Konstantin & Brendan" />
+	<link rel="shortcut icon" type="image/x-icon" href="../DATA/IMAGES/icone.ico" />
+	<title>Rent a Man</title>
+	<script type="text/javascript" src="../JS/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="../JS/menu.js"></script>
+</head>
+<body>
+
+<!--menuderoulant!-->
+
+<script type="text/javascript">
+		$(document).ready(function(){
+			var timedrop = 2000;
+			var idMenu = 'ul#menu';
+			var classHover = 'hover';
+			var texteSub = "Affiche le sous-menu";
+			var arrowfff = "<span>▼</span>";
+			
+			if((idMenu)) {
+				// Ajoute la class .drop lorsque le JS est activé
+				$(idMenu).addClass('drop'); 
+				// Ajoute un span (fleche) lorsqu'il y a un sous menu et change le lien
+				$("li.sub > a",idMenu).text(function () {
+					$(this).replaceWith('<a href="" title="	' + '"><span>' + $(this).text() + '</span> '+arrowfff+'</a> '); 
+				});
+				// On parcours les liens du menu
+				$('li a',idMenu).each(function () {
+					// 
+					var menuParent = $(this).closest('ul').parent();
+					// le cursor est sur l'élément
+					$(this).bind("mouseenter focus", function () {
+						$(this).addClass( classHover );
+						$(menuParent).addClass( classHover );
+						// le cursor n'est plus sur l'élément
+						}).bind("mouseleave blur", function () {
+						$(this).removeClass( classHover );
+						//
+						if (!$('.'+classHover, menuParent).length) {
+							// Retardement pour que le sous-menu disparaisse > 2000 = 2sec
+							setTimeout(function(){
+							$(menuParent).removeClass( classHover );
+						},timedrop);
+					}
+				});
+			});//end
+		}
+			
+	});
+</script>
+<!--div pour la baniere-->
+<div id="div_ban">
+	<p>Rent a Man</p>
+	<a href="index.html" style="display:block;width:100%;height:100%;"><img src="../DATA/IMAGES/banniere1.png" align="center" alt=""></a> 
+</div>
+	
+	<!--div pour le menu-->
+	<nav id="div_menu">
+		<ul id="menu" role="menubar">
+			<li><a href="index.html" title="Retour à l'Accueil"><span>Accueil</span></a></li>
+			<li class="sub"><a href="#" title="Aller aux Actualités"><span>Actualités</span></a>
+				<ul>
+					<li><a href="actu.html" title=""><span>File Actualité</span></a></li>
+					<li><a href="newsletters.html" title=""><span>Newsletters</span></a></li>
+				</ul>
+			</li>
+			<li class="sub"><a href="#" title="Nos Produits"><span>Produits</span></a>
+				<ul>
+					<li><a href="gamme.html" title=""><span>Gamme</span></a></li>
+					<li><a href="catalogue.html" title=""><span>Catalogue</span></a></li>
+				</ul>
+			</li>
+			<li><a href="about.html" title="A Propos"><span>A propos</span></a></li>
+			<li><a href="contact.html" title="Page pour nous contacter"><span>Contact</span></a></li>
+		</ul>
+		<div id="div_lang">
+			<a href="index-eng.html"><img src="../DATA/IMAGES/icone-eng.png" alt="Anglais"/></a>
+			<a href="index.html"><img src="../DATA/IMAGES/icone-fr.png" alt="Français"/></a>
+		</div>
+	</nav>
+
+<!--div pour le corps de la page-->
+<div id="div_corps">
+	<br>  
+	<h1>Mentions Légales</h1>
+	
+	<h2>1. Présentation de notre site web</h2>
+	
+	<p>Conformément à la loi n° 2004-2005 du 21 juin 2004 pour la confiance dans l'économie numérique, notre site web créé par <a href="http://konstantin-sidorenko.fr" title="Konstantin et Brendan">Konstantin et Brendan</a>, propriétaire du site <a href="http://konstantin-sidorenko.fr" title="Konstantin et Brendan">konstantin-sidorenko.fr</a>, met à disposition du public les informations concernant notre entreprise.<br />
+	Eventuellement modifiables, nous vous invitons donc à consulter nos mentions légales le plus souvent possible, de manière à en prendre connaissance fréquemment</p>
+	
+	<p>Le site <a href="http://rentaman.fr" title="Konstantin et Brendan">rentaman.fr</a> appartient à Konstantin et Brendan - , dont le siège social est situé à l'adresse suivante : 29100.<br />
+		Personne physique ou morale, Brendan est responsable de la publication, dont l'adresse e-mail est la suivante : <a href="mailto:brendan@rentaman.fr">brendan@rentaman.fr</a><br />
+		Le webmaster, Konstantin, est responsable de l'administration du site, dont l'adresse e-mail est la suivante : <a href="mailto:konstantin@rentaman.fr">konstantin@rentaman.fr</a>.<br />
+	Le site <a href="http://rentaman.fr" title="Konstantin et Brendan">rentaman.fr</a> est hébergé par one.com, dont le siège social est localisé à l'adresse suivante : 29100.</p>
+	
+	<p><i>Crédits : ces mentions légales ont étés générées et offertes via cet outil <a href="http://www.g7design.fr/g7blog/g7design/un-generateur-de-mentions-legales-gratuit.html" title="Générateur de mentions légales gratuit" >http://www.g7design.fr/g7blog/g7design/un-generateur-de-mentions-legales-gratuit.html</a>. Les éditeurs se déchargent de toutes responsabilités.</i><p>
+		
+		<h2 id="conditions">2. Conditions générales d’utilisation du site et des services proposés.</h2>
+		
+		<p>En utilisant notre site web <a href="http://rentaman.fr" title="Konstantin et Brendan">rentaman.fr</a>, vous acceptez pleinement et entièrement les conditions générales d'utilisation précisées dans nos mentions légales. Accessible à tout type de visiteurs, il est important de préciser toutefois qu'une interruption pour maintenance du site web peut-être décidée par Konstantin et Brendan. Les dates et heures d'interruptions seront néanmoins précisées à l'avance aux utilisateurs.</p>
+		
+		<h2>3. Les produits ou services proposés par <a href="http://rentaman.fr" title="Konstantin et Brendan">rentaman.fr</a></h2>
+		
+		<p>En accord avec sa politique de communication, le site <a href="http://rentaman.fr" title="Konstantin et Brendan">rentaman.fr</a> a pour vocation d'informer les utilisateurs sur les services proposés par Konstantin et Brendan, qui s'efforce alors de fournir des informations précises sur son activité. Cependant, des inexactitudes ou des omissions peuvent exister : la société ne pourra en aucun cas être tenue pour responsable pour toute erreur présente sur le site <a href="http://rentaman.fr" title="Konstantin et Brendan">rentaman.fr</a>.</p>
+		
+		<h2>4.  Limitations contractuelles</h2>
+		
+		<p>Les informations retranscrites sur notre site web <a href="http://rentaman.fr" title="Konstantin et Brendan">rentaman.fr</a> font l’objet de démarches qualitatives, en vue de nous assurer de leur fiabilité. Cependant, nous ne pourrons encourir de responsabilités en cas d’inexactitudes techniques lors de nos explications.<br />
+		Si vous constatez une erreur concernant des informations que nous auront pu omettre, n’hésitez pas à nous le signaler par mail à <a href="mailto:brendan@rentaman.fr">brendan@rentaman.fr</a>.</p>
+		
+		<p>Les liens reliés directement ou indirectement à notre site web <a href="http://rentaman.fr" title="Konstantin et Brendan">rentaman.fr</a> ne sont pas sous le contrôle de notre société. Par conséquent, nous ne pouvons nous assurer de l’exactitude des informations présentes sur ces autres sites Internet.</p>
+		
+		<p>Utilisant la technologie JavaScript, le site <a href="http://rentaman.fr" title="Konstantin et Brendan">rentaman.fr</a> ne pourra être tenu pour responsable en cas de dommages matériels liés à son utilisation. Par ailleurs, toute autre type de conséquence liée à l'exploitation du site <a href="http://rentaman.fr" title="Konstantin et Brendan">rentaman.fr</a>, qu'elle soit direct ou indirect (bug, incompatibilité, virus, perte de marché, etc.).</p>
+		
+		<h2>5. Propriété intellectuelle et contenu du site Internet</h2>
+		
+		<p>Le contenu rédactionnel du site web <a href="http://rentaman.fr" title="Konstantin et Brendan">rentaman.fr</a> appartient exclusivement à Konstantin et Brendan. Toute violation des droits d’auteur est sanctionnée par l’article L.335-2 du Code de la Propriété Intellectuelle, avec une peine encourue de 2 ans d’emprisonnement et de 150 000€ d’amende</p>
+		
+		<p>Le site <a href="http://rentaman.fr" title="Konstantin et Brendan">rentaman.fr</a> ne pourra être mis en cause en cas de propos injurieux, à caractère raciste, diffamant ou pornographique, échangés sur les espaces interactifs. La société se réserve également le droit de supprimer tout contenu contraire aux valeurs de l'entreprise ou à la législation applicable en France.</p>
+		
+		<p>En naviguant sur le site <a href="http://rentaman.fr" title="Konstantin et Brendan">rentaman.fr</a>, l'utilisateur accepte également l'installation de cookies éventuelle sur son ordinateur.</p>
+		
+		<h2>6. Données personnelles, respect de votre vie privée et de vos libertés</h2>
+		
+		<p>Toute informations recueillie sur le site web <a href="http://rentaman.fr" title="Konstantin et Brendan">rentaman.fr</a> se font dans le cadre des besoins liés à l'utilisation de notre plateforme, tels que le formulaire de commande ou la demande d'inscription à la Newsletter. Par ailleurs, le désabonnement de la Newsletter se fait grâce au lien situé en pied de page.<br />
+		Konstantin et Brendan s'engage à ne céder en aucun cas les informations concernant les utilisateurs du site Internet, de quelque façon qu'il soit (vente, échange, prêt, location, don).</p>
+		
+		<p>Conformément à la loi « informatique et libertés » du 6 janvier 1978 modifiée en 2004, l’utilisateur bénéficie d’un droit d’accès et de rectification aux informations le concernant, droit qu’il peut exercer à tout moment en adressant un mail à l’adresse <a href="mailto:konstantin@rentaman.fr">konstantin@rentaman.fr</a>, ou en effectuant sa demande par courrier, à l’adresse suivante : 29100.</p>
+		
+		
+		
+		<h2>7. Droit applicable et lois concernées</h2>
+		
+		<p>Soumis au droit français, le site web <a href="http://rentaman.fr" title="Konstantin et Brendan">rentaman.fr</a> est encadré par la loi n° 2004-2005 du 21 juin 2004 pour la confiance dans l'économie numérique, l’article L.335-2 du Code de la Propriété Intellectuelle et la loi « informatique et libertés » du 6 janvier 1978 modifiée en 2004.</p>
+	<br> 
+	<br>  
+	
+</div>
+
+		<!--div pour le pied de page-->
+		<div id="div_footer">
+			<a href="https://twitter.com/twitter" class="twitter-follow-button" data-show-count="false" data-lang="fr">Suivre @twitter</a>
+			<iframe align="center" src="http://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;width&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;share=true&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:40px;" allowTransparency="true"></iframe>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+			<br>
+			<a href="http://jigsaw.w3.org/css-validator/validator?uri=konstantin-sidorenko.fr%2FSTYLE%2Fstyle.css&profile=css3&usermedium=all&warning=1&vextwarning=">
+				<img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS Valide !" />
+			</a>
+			<a href="#"><img id="bouton_haut"src="../DATA/IMAGES/haut.png" alt=""></a> 
+			<br>
+			<p>&copy; Tous droits réservés 2014 rentaman.fr</p><a href="mentions.html"> Mentions légales </a>
+		</div>
+
+</body>
+</html>

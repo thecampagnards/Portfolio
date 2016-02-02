@@ -1,0 +1,19 @@
+
+@font-face {
+	font-weight: normal;
+	font-style: normal;
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot');
+	src:url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/icomoon.ttf') format('truetype'),
+		url('../fonts/icomoon.woff') format('woff'),
+		url('../fonts/icomoon.svg#icomoon') format('svg');
+}
+
+/* General styles for all types of buttons */
+
+.progress-button .content::before,
+.progress-button .content::after  {
+	font-family: "icomoon";
+	content: "\e601";
+}

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+				<url>
+					<loc>http://konstantin-sidorenko.fr/doc/Rentaman</loc>
+					<lastmod>2014-12-20T18:26:03+00:00</lastmod>
+				</url>
+				<url>
+					<loc>http://konstantin-sidorenko.fr/doc/Forum</loc>
+					<lastmod>2014-12-20T18:26:03+00:00</lastmod>
+				</url>
+				<url>
+					<loc>http://konstantin-sidorenko.fr/doc/Portfolio</loc>
+					<lastmod>2014-12-20T18:26:03+00:00</lastmod>
+				</url>
+				<url>
+					<loc>http://konstantin-sidorenko.fr/doc/cv.pdf</loc>
+					<lastmod>2014-12-20T18:26:03+00:00</lastmod>
+				</url>
+				<url>
+					<loc>http://konstantin-sidorenko.fr/doc/projetC.zip</loc>
+					<lastmod>2014-12-20T18:26:03+00:00</lastmod>
+				</url>
+				<url>
+					<loc>http://konstantin-sidorenko.fr/doc/Bibliotheque</loc>
+					<lastmod>2014-12-20T18:26:03+00:00</lastmod>
+				</url>
+				<url>
+					<loc>http://konstantin-sidorenko.fr/doc/Foyer</loc>
+					<lastmod>2014-12-20T18:26:03+00:00</lastmod>
+				</url>
+				<url>
+					<loc>http://konstantin-sidorenko.fr/doc/BurgerQuiz</loc>
+					<lastmod>2014-12-20T18:26:03+00:00</lastmod>
+				</url>
+				<url>
+				  <loc>http://konstantin-sidorenko.fr/</loc>
+				  <lastmod>2014-12-21T21:52:52+00:00</lastmod>
+				</url>
+				<url>
+				  <loc>http://konstantin-sidorenko.fr/doc/cv.pdf</loc>
+				  <lastmod>2014-12-20T18:26:03+00:00</lastmod>
+				</url>
+</urlset>

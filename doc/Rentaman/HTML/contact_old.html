@@ -1,0 +1,321 @@
+﻿<!doctype html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=false;">
+	<link rel="stylesheet" type="text/css" href="../STYLE/style.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="../STYLE/style-form.css" media="screen" />
+	<meta name="author" content="Konstantin & Brendan" />
+	<title>Rent a Man</title>
+	<script type="text/javascript" src="../JS/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="../JS/form.js"></script>
+	<script type="text/javascript" src="../JS/facebook.js"></script>
+</head>
+<body>
+
+<!--menuderoulant!-->
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		var timedrop = 2000;
+		var idMenu = 'ul#menu';
+		var classHover = 'hover';
+		var texteSub = "Affiche le sous-menu";
+		var arrowfff = "<span>▼</span>";
+		
+		if((idMenu)) {
+			// Ajoute la class .drop lorsque le JS est activé
+			$(idMenu).addClass('drop'); 
+			// Ajoute un span (fleche) lorsqu'il y a un sous menu et change le lien
+			$("li.sub > a",idMenu).text(function () {
+				$(this).replaceWith('<a href="" title="	' + '"><span>' + $(this).text() + '</span> '+arrowfff+'</a> '); 
+			});
+			// On parcours les liens du menu
+			$('li a',idMenu).each(function () {
+				// 
+				var menuParent = $(this).closest('ul').parent();
+				// le cursor est sur l'élément
+				$(this).bind("mouseenter focus", function () {
+					$(this).addClass( classHover );
+					$(menuParent).addClass( classHover );
+					// le cursor n'est plus sur l'élément
+					}).bind("mouseleave blur", function () {
+					$(this).removeClass( classHover );
+					//
+					if (!$('.'+classHover, menuParent).length) {
+						// Retardement pour que le sous-menu disparaisse > 2000 = 2sec
+						setTimeout(function(){
+							$(menuParent).removeClass( classHover );
+						},timedrop);
+					}
+				});
+			});//end
+		}
+		
+	});
+</script>
+<!--div pour la baniere-->
+<div id="div_ban">
+	<p>Rent a Man</p>
+	<a href="index.html" style="display:block;width:100%;height:100%;"><img src="../DATA/IMAGES/banniere1.png" align="center" alt=""></a> 
+</div>
+	
+	<!--div pour le menu-->
+	<nav id="div_menu">
+		<ul id="menu" role="menubar">
+			<li><a href="index.html" title="Retour à l'Accueil"><span>Accueil</span></a></li>
+			<li class="sub"><a href="#" title="Aller aux Actualités"><span>Actualités</span></a>
+				<ul>
+					<li><a href="actu.html" title=""><span>File Actualité</span></a></li>
+					<li><a href="newsletters.html" title=""><span>Newsletters</span></a></li>
+				</ul>
+			</li>
+			<li class="sub"><a href="#" title="Nos Produits"><span>Produits</span></a>
+				<ul>
+					<li><a href="gamme.html" title=""><span>Gamme</span></a></li>
+					<li><a href="catalogue.html" title=""><span>Catalogue</span></a></li>
+				</ul>
+			</li>
+			<li><a href="about.html" title="A Propos"><span>A propos</span></a></li>
+			<li><a href="contact.html" title="Page pour nous contacter"><span>Contact</span></a></li>
+		</ul>
+		<div id="div_lang">
+			<a href="index-eng.html"><img src="../DATA/IMAGES/icone-eng.png" alt="Anglais"/></a>
+			<a href="index.html"><img src="../DATA/IMAGES/icone-fr.png" alt="Français"/></a>
+		</div>
+	</nav>
+
+<!--div pour le corps de la page-->
+<div id="div_corps">
+
+	<form  method="get" action="mailto:konstantin.sidorenko@orange.fr">
+		
+		<br><br>
+		
+		<label class="form_col" for="lastName">Nom :</label>
+		<input class="" name="lastName" id="lastName" type="text">
+		<span style="display: none;" class="tooltip">Un nom ne peut pas faire moins de 2 caractères</span>
+		<br><br>
+		
+		<label class="form_col" for="firstName">Prénom :</label>
+		<input class="" name="firstName" id="firstName" type="text">
+		
+		<span style="display: none;" class="tooltip">Un prénom ne peut pas faire moins de 2 caractères</span>
+		<br><br>
+		
+		
+		<label class="form_col" for="mail">Mail :</label>
+		<input class="" name="mail" id="mail" type="email">
+		<span style="display: none;" class="tooltip">Le mail est invalide</span>
+		<br><br>
+		
+		<textarea id="commentaire" name="commentaire" rows="10" cols="100" style="color: grey" placeholder="Tapez vos commentaires ici" ></textarea>
+		<br><br>
+		
+		<span class="form_col"></span>
+		<label><input name="news1" type="checkbox"> Je désire recevoir la newsletter chaque mois.</label>
+		<br><br>
+		<span class="form_col"></span>
+		<label><input name="news2" type="checkbox"> Je désire recevoir la newsletter chaque mois.</label>
+		<br><br>
+		<span class="form_col"></span>
+		<label><input name="news3" type="checkbox"> Je désire recevoir la newsletter chaque mois.</label>
+		<br><br>
+		
+		<span class="form_col"></span>
+		<label><input name="valide" type="checkbox"> J'ai pris connaissant des conditions générales d'utilisation relative au traitemnt de mes données personnels.</label>
+		<br><br>
+		
+		<span class="form_col"></span>
+		<input type="submit" id="button" onclick="envoyer()" value="Envoyer"> <input id="button" value="Réinitialiser le formulaire" type="reset">
+		<!--value="Soumettre" onClick="Javascript:window.document.location.href='index.html';"!-->
+    </form>
+	
+	
+    <script>
+		function envoyer() {
+			var name = document.getElementById('name').value;
+			var email = document.getElementById('email').value;
+			var tel = document.getElementById('tel').value;
+			var message = document.getElementById('message').value;
+			
+			
+			
+			document.getElementById('body').value = "Demande de contact de ";
+		}
+
+        // Fonction de désactivation de l'affichage des "tooltips"
+        
+        function deactivateTooltips() {
+			
+            var spans = document.getElementsByTagName('span'),
+            spansLength = spans.length;
+            
+            for (var i = 0 ; i < spansLength ; i++) {
+                if (spans[i].className == 'tooltip') {
+                    spans[i].style.display = 'none';
+                }
+            }
+			
+        }
+		
+		
+        // La fonction ci-dessous permet de récupérer la "tooltip" qui correspond à notre input
+		
+        function getTooltip(elements) {
+			
+            while (elements = elements.nextSibling) {
+                if (elements.className === 'tooltip') {
+                    return elements;
+                }
+            }
+            
+            return false;
+			
+        }
+		
+		
+        // Fonctions de vérification du formulaire, elles renvoient "true" si tout est ok
+		
+        var check = {}; // On met toutes nos fonctions dans un objet littéral
+		
+        check['sex'] = function() {
+			
+            var sex = document.getElementsByName('sex'),
+			tooltipStyle = getTooltip(sex[1].parentNode).style;
+            
+            if (sex[0].checked || sex[1].checked) {
+                tooltipStyle.display = 'none';
+                return true;
+            } else {
+                tooltipStyle.display = 'inline-block';
+                return false;
+            }
+			
+        };
+		
+        check['lastName'] = function(id) {
+			
+            var name = document.getElementById(id),
+			tooltipStyle = getTooltip(name).style;
+			
+            if (name.value.length >= 2) {
+                name.className = 'correct';
+                tooltipStyle.display = 'none';
+                return true;
+            } else {
+                name.className = 'incorrect';
+                tooltipStyle.display = 'inline-block';
+                return false;
+            }
+			
+        };
+		
+        check['firstName'] = check['lastName']; // La fonction pour le prénom est la même que celle du nom
+		
+        check['age'] = function() {
+			
+            var age = document.getElementById('age'),
+			tooltipStyle = getTooltip(age).style,
+			ageValue = parseInt(age.value);
+            
+            if (!isNaN(ageValue) && ageValue >= 5 && ageValue <= 140) {
+                age.className = 'correct';
+                tooltipStyle.display = 'none';
+                return true;
+            } else {
+                age.className = 'incorrect';
+                tooltipStyle.display = 'inline-block';
+                return false;
+            }
+			
+        };
+		
+        check['country'] = function() {
+			
+            var country = document.getElementById('country'),
+			tooltipStyle = getTooltip(country).style;
+            
+            if (country.options[country.selectedIndex].value != 'none') {
+                tooltipStyle.display = 'none';
+                return true;
+            } else {
+                tooltipStyle.display = 'inline-block';
+                return false;
+            }
+			
+        };
+		
+		
+        // Mise en place des événements
+        
+        (function() { // Utilisation d'une fonction anonyme pour éviter les variables globales.
+			
+            var myForm = document.getElementById('myForm'),
+			inputs = document.getElementsByTagName('input'),
+			inputsLength = inputs.length;
+			
+            for (var i = 0 ; i < inputsLength ; i++) {
+                if (inputs[i].type == 'text' || inputs[i].type == 'password') {
+					
+                    inputs[i].onkeyup = function() {
+                        check[this.id](this.id); // "this" représente l'input actuellement modifié
+                    };
+					
+                }
+            }
+			
+            myForm.onsubmit = function() {
+				
+                var result = true;
+				
+                for (var i in check) {
+                    result = check[i](i) && result;
+                }
+				
+                if (result) {
+                    alert('Le formulaire est bien rempli.');
+                }
+				
+                return false;
+				
+            };
+			
+            myForm.onreset = function() {
+				
+                for (var i = 0 ; i < inputsLength ; i++) {
+                    if (inputs[i].type == 'text' || inputs[i].type == 'password') {
+                        inputs[i].className = '';
+                    }
+                }
+				
+                deactivateTooltips();
+				
+            };
+			
+        })();
+		
+		
+        // Maintenant que tout est initialisé, on peut désactiver les "tooltips"
+        
+        deactivateTooltips();
+		
+    </script>	
+</div>
+
+	<!--div pour le pied de page-->
+	<div id="div_footer">
+		<a href="https://twitter.com/twitter" class="twitter-follow-button" data-show-count="false" data-lang="fr">Suivre @twitter</a>
+		<iframe align="center" src="http://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;width&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;share=true&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:40px;" allowTransparency="true"></iframe>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		<br>
+		<a href="http://jigsaw.w3.org/css-validator/check/referer">
+			<img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS Valide !" />
+		</a>
+		<a href="#"><img id="bouton_haut"src="../DATA/IMAGES/haut.png" alt=""></a> 
+		<br>
+		<p>&copy; Tous droits réservés 2014 rentaman.fr</p><a href="mentions.html"> Mentions légales </a>
+	</div>
+
+</body>
+</html>

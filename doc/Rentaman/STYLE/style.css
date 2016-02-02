@@ -1,0 +1,618 @@
+﻿/*test*/
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans|Oswald);
+
+/*pour firefox sinon le menu n'est pas bien collé mais 
+genere une erreur pour le css validator mais c'est plus jolie*/
+
+@-moz-document url-prefix(){
+	ul#menu > li span + span {
+		float:right;
+	}
+}
+/*all*/
+*{
+	margin:0;
+	padding:0;
+	font-family: sans-serif,taoma,tahoma,'Droid Sans', sans-serif;
+
+}
+body {
+	background:#ecf0f1;
+	font-family:taoma,tahoma,Arial, Helvetica, sans-serif;
+	position:relative;
+}
+
+h1{
+	text-align:center;
+	font-weight: bold;
+	font-size: 45px;
+}
+
+h1,h2{
+	font-family: tahoma,'Nobile', sans-serif;
+}
+
+/*changement des liens*/
+a{
+font-family:taoma,tahoma,Arial, Helvetica, sans-serif;
+font-weight: bold;
+}
+
+/*banniere*/
+#div_ban{
+	position:relative;
+	left:14%;
+}
+/*pour le titre du site*/
+#div_ban > p{
+	font-family: 'Oswald', sans-serif;
+	font-weight:bold;
+	font-size: 150px;
+	position:absolute;
+	top:70px;
+	left:10%;
+	color:#e74c3c;
+	text-shadow: 0.1em 0.1em 0.2em black
+}
+
+/*****menu deroulant*****/
+#div_menu{ 
+	background-color:#bdc3c7;
+	margin-left :10%; 
+	margin-right :10%;
+	border-top-left-radius:2em;
+	border-top-right-radius:2em;	
+	border-top: 2px solid #2c3e50;
+	border-left: 2px solid #2c3e50;
+	border-right: 2px solid #2c3e50;
+	border-bottom: 2px solid #2c3e50;
+	box-shadow: -1px 2px 5px 1px #34495e; 
+	position:relative;
+}
+
+#wrapper {
+	padding:1.25em;
+	width:900px;
+}
+#wrapper pre {
+	white-space:pre-wrap;
+}
+#wrapper p {
+	margin-bottom:0.6em;
+}
+#wrapper h1 {
+	font-size:2.5em;
+}
+
+/*hfeed*/
+
+.hfeed h1, a {
+	color:#e5011a;
+	text-decoration:none;
+}
+
+a:hover {
+	color:#000;
+}
+.hfeed h1 {
+	font-size:1.8em;
+	padding:0;
+	text-transform:uppercase;
+}
+.hfeed .post-info {
+	margin:0;
+}
+.hfeed .tags {
+	margin:0 0 10px 0;
+}
+.hfeed .post-info .author, .hfeed .post-info .published {
+	display:inline;
+	padding-right:5px;
+}
+.hfeed .post-info .author:before {
+	content:'Author ';
+}
+.hfeed .post-info .author:after {
+	content:', ';
+}
+.hfeed .tags {
+	padding:0;
+}
+.hfeed .tags:before {
+	content:'Tags : ';
+}
+.hfeed .tags li {
+	display:inline;
+	padding-right:5px;
+}
+/*couleur pour le menu*/
+
+ul#menu > li a {
+	background:#7f8c8d;
+	color:#fff;
+	text-shadow: 0px -1px 1px #686868;
+}
+
+ul#menu li.hover > a, ul#menu li:hover > a, ul#menu a.current, ul#menu a:hover, ul#menu a:focus {
+	background: #95a5a6;
+	color: #2c3e50;
+	text-shadow:none;
+}
+
+ul#menu ul a {
+	background:#2c3e50;
+	color:#FFF;
+	font-size:70%;
+	text-transform:none;
+}
+
+/*placement du menu*/
+ul#menu {
+	padding:2%;
+	margin-left: 22.5%;
+}
+ul#menu li {
+	list-style:none;
+}
+ul#menu > li {
+	display:inline-block;
+	line-height: 1.7em;
+	margin-right:0.4em;
+	position:relative;
+	vertical-align:top;
+}
+ul#menu > li span + span {
+	/*float:right;*/
+	font-size:80%;
+	padding-left:0.4em;
+}
+
+ul#menu li a {
+	display:block;
+	font-weight:bold;
+	padding:0.4em 0.8em;
+	position:relative;
+	text-decoration:none;
+}
+ul#menu ul a:before {
+	content:'› ';
+}
+ul#menu ul a {
+	text-shadow:none;
+}
+ul#menu > li > a {
+	border-radius: 0.4em;
+}
+ul#menu li.sub > a {
+	border-radius: 0.4em 0.4em 0 0;
+}
+ul#menu ul, ul#menu li li:last-child, ul#menu li li:last-child a, ul#menu li li:last-child a:hover {
+	border-radius: 0 0 0.4em 0.4em;
+}
+
+ul#menu.drop {
+	padding:2% 2% 0;
+}
+ul#menu.drop > li > a {
+	border-radius: 0.4em 0.4em 0 0;
+}
+ul#menu.drop li:hover > ul, ul#menu.drop li.hover > ul, ul#menu.drop li > a:focus + ul {
+	left:0;
+}
+ul#menu.drop ul {
+	left: -9999px;
+	padding-top:2px;
+	position: absolute;
+	z-index:999;
+}
+ul#menu.drop ul a {
+	width:10em;
+	border-bottom:1px solid #dadada;
+	border-left:1px solid #dadada;
+	border-right:1px solid #dadada;
+}
+/**fin du css pour le menu***/
+
+/*placement des drapeaux pour les langues*/
+#div_lang {
+	position:absolute;
+	top:5px;
+	right:50px;
+}
+
+#div_lang  > img{
+	width:30px;
+}
+
+/*corps de la page*/
+
+#div_media{
+	width : 40%;
+	position:absolute;
+	top:7em;
+	right:1em;
+}
+
+/*****slider*******/
+ #slider{
+	background:url('../DATA/IMAGES/background.png');
+	width:400px;
+	height:250px;
+	margin:50px auto;
+	position:relative;
+}
+/*position du masque*/
+#mask{
+	width:100%;
+	height:100%;
+	position:absolute;
+	overflow:hidden;
+}
+/*placement des fleches*/
+.fleche{
+	position:absolute;
+	top:100px;
+	cursor:pointer;
+}
+#fleche_gauche{
+	left:-20px;
+}
+#fleche_droite{
+	right: -20px;
+}
+#image_container{
+	position:absolute;
+	width:400%;
+	height:100%;
+        /* La transition sur tout les navigateurs */
+           /* Chrome */ 
+          -webkit-transition-property:all;
+          -webkit-transition-duration:1s;
+
+           /* Firefox */ 
+          -moz-transition-property:all;
+          -moz-transition-duration:1s;
+          
+           /* Opera */ 
+          transition-property:all;
+          transition-duration:1s;
+}
+      
+/* Les différentes positions du slider */
+.image1 #image_container{
+	left:0;
+}
+.image2 #image_container{
+    left:-100%;
+}
+.image3 #image_container{
+	left:-200%;
+}
+.image4 #image_container{
+	left:-300%;
+}
+/* Les images */
+#image_container li{
+    float:left;
+}
+/* position du cadre*/
+#glass{
+	position:absolute;
+    top:0px;
+	left:0px;
+}
+/******fin slider*****/
+
+
+#div_intro{
+	position:static;
+	width : 50%;
+	top:0;
+	left:0;
+}
+#div_contact{
+	width : 50%;
+	position:absolute;
+	top:26em;
+	right:-8em;
+}
+
+/*position du corps de la page*/
+#div_corps{
+	position:relative;
+	background-color:#bdc3c7;
+	margin-left :10%; 
+	margin-right :10%; 
+	border-bottom-left-radius:2em;
+	border-bottom-right-radius:2em;
+	border-bottom: 2px solid #2c3e50;
+	border-left: 2px solid #2c3e50;
+	border-right: 2px solid #2c3e50;
+	box-shadow: -1px 2px 5px 1px #34495e; 
+}
+
+#div_corps > * {
+	margin-left :2%;
+}
+
+/*footer*/
+
+#div_footer{
+	margin-top : 2%;
+	margin-left :10%; 
+	margin-right :10%; 
+	text-align:center;
+}
+
+#div_footer>p{
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	font-size: 16px;
+}
+
+/*bouton remonte page*/
+#bouton_haut{
+	width:30px;
+ 
+	height:30px;
+	position:fixed;
+	right: 10px;
+	bottom:10px;
+}
+
+/***css pour actualité***/
+.date {
+	text-align:center;
+	width:55px;
+	margin-right:10px;
+	margin-top:2px;
+	background:#7f8c8d;
+	color:white;
+	float:left;
+}
+.date .jour {
+	font-size:1.3em;
+}
+
+.date .mois:first-letter {
+	font-size:1.5em;
+}
+.auteur {
+	font-size:1em;
+	color: #2c3e50;
+}
+
+#div_corps_actu{
+	margin-right:20px;
+	border-top: 2px solid #7f8c8d;
+	
+}*/
+/***fin du css pour les actu****/
+
+/***css pour les produits***/
+/*#produit_2{
+	margin-left:30%;
+	border-top: 2px solid #7f8c8d;
+	margin-right:50px;
+}
+#produit_1,#produit_3{
+	margin-left:20%;
+	border-top: 2px solid #7f8c8d;
+	margin-right:50px;
+}
+.produit1,.produit3{
+float:left;
+
+}
+.produit2{
+float:right;
+margin-right:10px;
+}*/
+
+#produit_1,#produit_3,#produit_2{
+	margin-left:30%;
+	border-top: 2px solid #7f8c8d;
+	margin-right:50px;
+}
+.produit1,.produit3,.produit2{
+float:left;
+
+}
+.produit1{
+
+border-bottom: 2px solid #7f8c8d;
+box-shadow: 0 4px 2px -2px gray;
+}
+.produit2{
+
+border-bottom: 2px solid #7f8c8d;
+box-shadow: 0 4px 2px -2px gray;
+}
+
+.about>p{
+	float:left;
+	display: inline;
+}
+.profil-konstantin{
+	width:150px;
+	float:left;
+	display: inline;
+	margin-right:2px;
+}
+.profil-brendan{
+	width:150px;
+	float:left;
+	display: inline;
+}
+#div_coordonnees{
+	float:right;
+	margin-top:5%;
+}
+.gras_sous{
+	font-weight: bold;
+	text-decoration: underline;
+}
+#div_mobile{
+		display:none;
+}
+.partenaire1:hover { 
+-webkit-transform: rotate(-360deg);
+ -moz-transform: rotate(-360deg); 
+ -o-transform: rotate(-360deg); 
+ -ms-transform: rotate(-360deg);
+ transform: rotate(-360deg);
+ }
+.partenaire1{
+	display:block;
+	/*Logo du site, retour accueil*/ position: absolute;
+	left: 10px;
+	-webkit-transition: all 1.1s;
+	/*Chrome 4.0 à 26.0, Safari 3.1 à 6.1*/ -moz-transition: all 1.1s;
+	/*Firefox 4.0 à 16.0*/ -o-transition: all 1.1s; 
+	/*Opéra 10.5 à 12.1*/ -ms-transition: all 1.1s; /*IE9*/ 
+	transition: all 1.1s; }
+.partenaire2{
+	width:200px;
+	position:absolute; left: 100px;
+	transition: all 1s;
+}
+.partenaire2:hover{
+	transform: scale(1.22);
+	-webkit-transform: scale(1.22);
+	-moz-transform: scale(1.22);
+	-ms-transform: scale(1.22);
+	-o-transform: scale(1.22);
+	transition: all 1s;
+}
+/***adaptation du menu pour la taille de l'ecran de (999px)***/
+@media screen and (max-width:999px) {
+	
+	#wrapper {
+		width:90%;
+	}
+	ul#menu {
+		padding:2%;
+		margin-left: 0%;
+	}
+	ul#menu.drop {
+		padding:2%;
+	}
+	ul#menu.drop > li > a {
+		border-radius: 0.4em;
+	}
+	ul#menu.drop li.sub > a {
+		border-radius: 0.4em 0.4em 0 0;
+	}
+	ul#menu.drop ul, ul#menu.drop li:hover > ul, ul#menu.drop li.hover > ul {
+		left:0;
+	}
+	ul#menu.drop ul {
+		padding-top:0;position:relative;
+	}
+	ul#menu.drop ul a, ul#menu.drop ul li:last-child a {
+		border-left:0;
+		border-right:0!important;
+		border-top:0!important;
+	}
+	ul#menu.drop ul li:first-child a {
+		border-top:1px solid #dadada;
+	}
+	ul#menu.drop ul a {
+		width:auto;
+	}
+}
+
+/***adaptation des pages pour la taille de l'ecran de (1030px)***/
+@media screen and (max-width:1030px) {
+	
+	/**pour le menu**/
+	ul#menu > li {
+		display: block;
+		margin-top:0.4em;
+	}
+
+	ul#menu {
+		padding:2%;
+		margin-left: 0%;
+	}
+	/**pour le corps de la page**/
+	#div_corps > *{
+		margin-left :5%;
+		margin-right:5%;
+	}
+	#pdf-iframe{
+		width:90%;
+	}
+
+	/**pour la banniere du haut**/
+	#div_ban{
+		display:none;/*on la cache*/
+	}
+	/**pour le wapper(le defilement d'image)**/
+	#div_media{
+		display:none;
+	}
+	/**reposition de la div contact**/
+	#div_contact{
+		position:relative;
+		top:0;
+		right:0;
+	}
+	/**reposition des drapeaux pour les langues**/
+	#div_lang {
+		position:absolute;
+		top:10px;
+		right:50px;
+	}
+	#div_intro{
+		width : 90%;
+	}
+	/**css pour les produits**/
+	#produit_1 .job{
+		top:70px;
+		left:25%;
+	}
+	#produit_1 .name{
+		top:30px;
+		left:25%;
+	}
+		
+	#produit_1 .resume{
+		top:110px;
+		left:25%;
+	}
+	.produit1{
+		float:left;
+		width:20%;	
+	}
+	.produit2{
+		float:left;
+		width:20%;
+			
+	}
+	.produit3{
+		float:left;
+		width:20%;
+			
+	}
+	/*efface les br en trop*/
+	#produit_1>br,#produit_3>br,#produit_2>br{
+		display:none;
+	}
+	/*enleve la bordure*/
+	#produit_1,#produit_3,#produit_2{
+		border-top:0;
+	}
+	/**fin css pour les produits**/
+	#google_iframe{
+		width:90%;
+	}
+	#div_coordonnees{
+		float:left;
+		display:block;
+		margin-bottom:50px;
+	}
+	#div_mobile{
+		display:block;
+	}
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Konstantin Sidorenko - Portfolio</title>
+	<meta name="Author" content="Konstantin Sidorenko" />
+	<meta name="keywords" content="konstantin,sidorenko,isen,cir,brest,informatique,reseau,réseau,programmation,digital,design,quimper,portfolio,web,presentation,présentation,html,css,js,jquery,burgerquiz,burger,quiz,game of cir,..." />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="icon" type="image/png" href="favicon.ico" />
+	<meta property="og:title" content="Konstantin Sidorenko - Portfolio" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="http://konstantin-sidorenko.fr" />
+	<meta property="og:image" content="http://konstantin-sidorenko.fr/img/site_small.jpg" />
+	<meta property="og:description" content="Je m'appelle Konstantin et je suis étudiant en 2ème année d’école d’ingénieur à l'ISEN de Brest en Cycle Informatique et Réseaux. Ma passion pour l'informatique a commencé au collège lorsque j'ai monté mon propre ordinateur avec l'aide de mon père. Par la suite j'ai appris par moi-même le langage C. En terminale, j'ai choisi de suivre la spécialité ISN (Informatique et Sciences du Numérique) en parallèle de la spécialité Mathématiques. Grâce à ma 1ère année de formation à l'ISEN, j'ai acquis de bonnes bases en programmation (voir mes compétences). Le sport fait aussi partie de ma vie ; je joue dans l’équipe sénior du club Quimper Communauté Hand Ball.">
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" media="screen" href="css/style.css" >
+    <link rel="stylesheet" type="text/css" media="screen" href="css/form.css" >	
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css">	
+    <link rel="stylesheet" type="text/css" media="screen" href="css/component-cv.css">	
+    <link rel="stylesheet" type="text/css" media="screen" href="css/component-form.css">
+	<!-- JS -->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/modernizr.custom.js"></script>	
+	<script async type="text/javascript" src="js/progressbar.min.js"></script>	
+	<script async type="text/javascript" src="js/progress.js"></script>
+	<script async type="text/javascript" src="js/app.js"></script>
+	<script async type="text/javascript" src="js/classie.js"></script>
+	<script type="text/javascript" src="js/progressButton.js"></script>
+    <script async type="text/javascript" src="js/TweenLite.min.js"></script>
+    <script type="text/javascript" src="js/EasePack.min.js"></script>
+    <script async type="text/javascript" src="js/demo-1.js"></script>
+    	<script type='text/javascript'>
+		//nav
+		$(function(){ $(window).scroll(function () {//Au scroll dans la fenetre on déclenche la fonction 
+		var taille = $('#phototop').height();
+			if ($(this).scrollTop() > taille) {//si on a défilé de plus de 150px du haut vers le bas 
+				$('#aboutme').addClass("menufix");
+				$('#cssmenu').addClass("fixNavigation"); //on ajoute la classe "fixNavigation" à <div id="navigation">
+				} else { 
+				$('#cssmenu').removeClass("fixNavigation");//sinon on retire la classe "fixNavigation" à <div id="navigation"> 
+				$('#aboutme').removeClass("menufix");
+		} }); }); 
+		//scroll
+		$(document).ready(function(){
+			$('.lieninterne').on('click', function(evt){
+				evt.preventDefault(); 
+				var target = $(this).attr('href');
+				$('html, body').stop().animate({scrollTop: $(target).offset().top}, 1000 );
+			});
+		});
+        //script pour bouton formulaire
+        $(document).ready(function (){ 
+            var formval=0;
+            var nom = document.getElementById("name");
+            var email = document.getElementById("email");
+            var object = document.getElementById("message");
+            function validateForm() {
+                formval=0;
+                if (object.value == "") {
+                    return false;
+                }
+                if (nom.value == "") {
+                    return false;
+                }
+                if (email.value == "") {
+                    return false;
+                }
+                formval=1;
+            }[].slice.call( document.querySelectorAll( 'button.progress-button' ) ).forEach( function( bttn ) {
+                new ProgressButton( bttn, {
+                    callback : function( instance ) {
+                        var progress = 0,interval = setInterval( function() {
+                            if(formval){
+                                $(".progress-button").attr("data-style", "rotate-angle-bottom");
+                                progress = Math.min( progress + Math.random() * 0.1, 1 );
+                                instance._setProgress( progress );
+                                if( progress === 1 ) {
+                                    instance._stop(1);
+                                    clearInterval( interval );
+                                }
+                            }
+                        }, 120 );}
+                });
+            });
+         }); 
+	</script>
+</head>
+<!--body--> 
+<body><div id="phototop"> <div id="large-header"> <canvas id="annimate-header" width="100%"></canvas> <div id="banner"> <h1 class="upper"> Konstantin Sidorenko </h1> <h2 class="upper"> Élève en école d'ingénieurs </h2> </div> </div></div> <div id='cssmenu' class='align-center'><ul><li><a class="lieninterne" href='#phototop'><span>Accueil</span></a></li><li><a class="lieninterne" href='#aboutme'><span>À propos</span></a></li><li><a class="lieninterne" href='#competences'><span>Compétences</span></a></li><li><a class="lieninterne" href='#projets'><span>Projets</span></a></li><li><a class="lieninterne" href='#experiences'><span>Expériences</span></a></li><li class='last'><a class="lieninterne" href='#contact'><span>Contact</span></a></li></ul></div><!--a propos--><div id="aboutme" class="article"><h1 class="upper">À propos</h1><ul class="ch-grid"><li><div class="ch-item ch-img-1"><div class="ch-info"><h3><span>"Il y a 10 types de personnes dans le monde, ceux qui comprennent le binaire et ceux qui ne le comprennent pas." </span></h3></div></div></li></ul><p>Je m'appelle Konstantin et je suis étudiant en 2ème année d’école d’ingénieurs à l'ISEN de Brest en Cycle Informatique et Réseaux. Ma passion pour l'informatique a commencé au collège lorsque j'ai monté mon propre ordinateur avec l'aide de mon père. Par la suite j'ai appris par moi-même le langage C. En terminale, j'ai choisi de suivre la spécialité ISN (Informatique et Sciences du Numérique) en parallèle de la spécialité Mathématiques. Grâce à ma 1ère année de formation à l'ISEN, j'ai acquis de bonnes bases en programmation (voir <a class="lieninterne" href='#competences'>mes compétences</a>). Le sport fait aussi partie de ma vie ; je joue dans l’équipe sénior du club Quimper Communauté Hand Ball.</p><a href="doc/cv_konstantin_sidorenko.pdf" TARGET="_blank"><button class="btn btn-5 btn-5a icon-cart" ><span>Voir mon CV</span></button></a></div><!--competences--><div id="competences" class="article"><h1 class="upper">Compétences techniques</h1><div id="bb_progress"><div class="block_progress"><div class="progress" id="progress" value="0.8"></div><p class="info_progress" style="">C#/C++/C</p></div><div class="block_progress"><div class="progress" id="progress2" value="0.5"></div><p class="info_progress" style="">Assembleur</p></div><div class="block_progress"><div class="progress" id="progress4" value="0.7"></div><p class="info_progress" style="">Java</p></div><div class="block_progress"><div class="progress" id="progress9" value="0.8"></div><p class="info_progress" style="">PHP</p></div><div class="block_progress"><div class="progress" id="progress7" value="0.8"></div><p class="info_progress" style="">JQuery/Ajax</p></div><div class="block_progress"><div class="progress" id="progress12" value="0.2"></div><p class="info_progress" style="">Node.js</p></div><div class="block_progress"><div class="progress" id="progress8" value="0.7"></div><p class="info_progress" style="">CSS/Boostrap</p></div><div class="block_progress"><div class="progress" id="progress3" value="0.7"></div><p class="info_progress" style="">SQL</p></div><div class="block_progress"><div class="progress" id="progress5" value="0.5"></div><p class="info_progress" style="">Cisco/Apache</p></div><div class="block_progress"><div class="progress" id="progress6" value="0.8"></div><p class="info_progress">Linux/Windows<br>Mac</p></div><div class="block_progress"><div class="progress" id="progress10" value="0.3"></div><p class="info_progress" style="margin-left:-20px;">Android</p></div><div class="block_progress"><div class="progress" id="progress11" value="0.1"></div><p class="info_progress" style="margin-left:-20px;">Ionic</p></div></div></div><!--projets--><div id="projets" class="article"><h1 class="upper">Mes Projets</h1><!--http://timeline.knightlab.com/ https://docs.google.com/spreadsheet/ccc?key=0AnB4QRTA5AD9dEh0ZHhLbkxpYlhHUk1fSjRnMFliSkE --><iframe src='//cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=11S5jtONiI7QvjpjknOLPA28c3MrnqlpK6xoZoR4Sgik&font=BreeSerif-OpenSans&maptype=toner&lang=fr&start_at_end=true&height=650' width='100%' height='650' frameborder='0'></iframe></div><!--experiences pro--><div id="experiences" class="article"><div class="container"><h1 class="upper">Expériences professionelles</h1><div class="row workDetails"><div class="col-xs-12 col-sm-3 col-md-2 col-lg-2"><div class="workYear">Sept, 2013<br>Présent</div></div><div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea"><div class="arrowpart"></div><div class="exCon"><h4>ISEN Brest</h4><h5>Etudiant en école d'ingénieurs</h5><p>Actuellement en 3ème année d’école d’ingénieurs à l'ISEN de Brest en Cycle Informatique et Réseaux.</p></div></div></div>
+<div class="row workDetails"><div class="col-xs-12 col-sm-3 col-md-2 col-lg-2"><div class="workYear">Juin, 2015<br>Août, 2015</div></div><div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea"><div class="arrowpart"></div><div class="exCon"><h4>Evernet</h4><h5>Stage chez Evernet</h5><p>Réalisation d'un stage de 7 semaines chez Evernet entant que développeur Web.</p></div></div></div><div class="row workDetails"><div class="col-xs-12 col-sm-3 col-md-2 col-lg-2"><div class="workYear">Sept, 2014<br>Sept, 2015</div></div><div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea"><div class="arrowpart"></div><div class="exCon"><h4>Digital Design</h4><h5>Projet Bénévole</h5><p>Projet bénévole au sein de l’école à Digital Design, création de site web pour plusieurs club de l'ISEN.</p></div></div></div><div class="row workDetails"><div class="col-xs-12 col-sm-3 col-md-2 col-lg-2"><div class="workYear">Juil, 2014<br>Août, 2014</div></div><div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea"><div class="arrowpart"></div><div class="exCon"><h4>ECOTRI</h4><h5>Emploi saisonnier</h5><p>Emploi saisonnier de 7 semaines comme ouvrier valoriste aux Ateliers Fouesnantais ECOTRI.</p></div></div></div><div class="row workDetails"><div class="col-xs-12 col-sm-3 col-md-2 col-lg-2"><div class="workYear">Juil, 2014<br>Aôut, 2014</div></div><div class="col-xs-12 col-sm-9 col-md-10 col-lg-10 rightArea"><div class="arrowpart"></div><div class="exCon"><h4>Ulamir</h4><h5>Projet Accompagnateur</h5><p>Stage de 2 semaines comme Animateur bénévole à l'Ulamir de Plonéis : encadrement d'un groupe d'enfants pendant 2 séjours de vacances.</p></div></div></div></div></div><!--contact--><div id="contact" class="article text-center"><h1 class="upper">Contactez moi</h1><p class="text-center icon-up"><span class="icon-phone"></span> 02 98 94 08 77 - 06 11 11 63 22</p><p class="text-center icon-up"><span class="icon-mail"></span> konstantin.sidorenko@orange.fr</p><br><div id="form-messages"></div><br><br><br><form id="ajax-contact" method="post" action="mailer.php"><div class="group field"> <input id="name" name="name" type="text" required><span class="highlight"></span><span class="bar"></span><label for="name">Nom</label></div><div class="group field"> <input id="email" name="email" type="text" required><span class="highlight"></span><span class="bar"></span><label for="email">Email</label></div><div class="group field"><textarea id="message" name="message" id="com" required ></textarea><span class="highlight"></span><span class="bar"></span><label for="message">Message</label></div><button type="submit" onClick="validateForm()" onload="buttonForm()" class="progress-button" data-perspective data-horizontal>Envoyer</button></form></div> <!-- Piwik --><iframe id="googlemap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d339026.57676316897!2d-4.497295499999961!3d48.40575769999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4816bbf160e9fdbb%3A0x5fe508a0e8c7d1d2!2sLe+Jardin+des+sciences%2C+29200+Brest!5e0!3m2!1sfr!2sfr!4v1415264336593" width="600" height="450" style="border:0"></iframe><script type="text/javascript">var _paq = _paq || [];_paq.push(['trackPageView']);_paq.push(['enableLinkTracking']);(function() {var u="//konstantin-sidorenko.fr/analytics/";_paq.push(['setTrackerUrl', u+'piwik.php']);_paq.push(['setSiteId', 1]);var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);})();</script><noscript><p><img src="//konstantin-sidorenko.fr/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript><!-- End Piwik Code --></body></html>	

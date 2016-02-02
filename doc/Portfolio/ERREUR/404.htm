@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+	<head>
+		<title>404 Error</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	</head>
+	<body>	
+		<h1 style="text-align:center;">Error 404</h1>
+		<a  href="../index.htm"><p style="text-align:center;">Go back to index</p></a>
+		<!--<noscript>-->
+			<embed style="margin-left:20%;" width="60%" height="550" src="http://konstantin-sidorenko.fr/ERREUR/pacman.swf"><!--
+		</noscript>
+		<div id="game" style="text-align:center;margin-left:20%;">
+			<script type="text/javascript">
+				
+				var unityObjectUrl = "http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject.js";
+				var js=false;
+				if (document.location.protocol == 'https:')
+				unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
+				document.write('<script type="text/javascript" src="' + unityObjectUrl + '"></script>');
+				if(js) {
+					document.write('<div class="missing"><a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!"><img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" /></a></div>');
+				}
+				
+			</script>
+			<script type="text/javascript">
+				
+				unityObject.embedUnity("UnityPlayer","soccer-physics.unity3d",850,550);
+				
+			</script>
+			<div id="UnityPlayer" style="visibility: visible;">
+				<embed  type="application/vnd.unity" style="display: block; " tabindex="0" firstframecallback="unityObject.firstFrameCallback();" src="soccer-physics.unity3d">
+			</div>
+			
+		</div>-->
+	</body>
+</html>

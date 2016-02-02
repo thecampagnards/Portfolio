@@ -1,0 +1,160 @@
+﻿<!doctype html>
+
+<head>
+
+    <!--produit<meta name="Description" CONTENT="Auteur : Charles Auteur ; Illustrateur : Pierre Dessin ; Catégorie : Ouvrages ; Prix : 9,24 £ ; Longueur : 784 pages">!-->
+    <meta name="keywords" content="rent a man, employer, location,service,ampe,pole emploi,..." />
+	<meta name="description" content="Chez [Rent-a-worker] nous rassemblons des travailleurs aux qualifications variées, issus d'horizons diverses afin de vous fournir celui qui correspond  précisement à vos besoins." />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=false;">
+	<link rel="stylesheet" type="text/css" href="../STYLE/style.css" media="screen" />
+	<meta name="author" content="Konstantin & Brendan" />
+	<link rel="shortcut icon" type="image/x-icon" href="../DATA/IMAGES/icone.ico" />
+	<title>Rent a Man</title>
+	<script type="text/javascript" src="../JS/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="../JS/menu.js"></script>
+</head>
+<body>
+
+<!--menuderoulant!-->
+
+<script type="text/javascript">
+		$(document).ready(function(){
+			var timedrop = 2000;
+			var idMenu = 'ul#menu';
+			var classHover = 'hover';
+			var texteSub = "Affiche le sous-menu";
+			var arrowfff = "<span>▼</span>";
+			
+			if((idMenu)) {
+				// Ajoute la class .drop lorsque le JS est activé
+				$(idMenu).addClass('drop'); 
+				// Ajoute un span (fleche) lorsqu'il y a un sous menu et change le lien
+				$("li.sub > a",idMenu).text(function () {
+					$(this).replaceWith('<a href="" title="	' + '"><span>' + $(this).text() + '</span> '+arrowfff+'</a> '); 
+				});
+				// On parcours les liens du menu
+				$('li a',idMenu).each(function () {
+					// 
+					var menuParent = $(this).closest('ul').parent();
+					// le cursor est sur l'élément
+					$(this).bind("mouseenter focus", function () {
+						$(this).addClass( classHover );
+						$(menuParent).addClass( classHover );
+						// le cursor n'est plus sur l'élément
+						}).bind("mouseleave blur", function () {
+						$(this).removeClass( classHover );
+						//
+						if (!$('.'+classHover, menuParent).length) {
+							// Retardement pour que le sous-menu disparaisse > 2000 = 2sec
+							setTimeout(function(){
+							$(menuParent).removeClass( classHover );
+						},timedrop);
+					}
+				});
+			});//end
+		}
+			
+	});
+</script>
+<!--div pour la baniere-->
+<div id="div_ban">
+	<p>Rent a Man</p>
+	<a href="index.html" style="display:block;width:100%;height:100%;"><img src="../DATA/IMAGES/banniere1.png" align="center" alt=""></a> 
+</div>
+	
+	<!--div pour le menu-->
+	<nav id="div_menu">
+		<ul id="menu" role="menubar">
+			<li><a href="index.html" title="Retour à l'Accueil"><span>Accueil</span></a></li>
+			<li class="sub"><a href="#" title="Aller aux Actualités"><span>Actualités</span></a>
+				<ul>
+					<li><a href="actu.html" title=""><span>File Actualité</span></a></li>
+					<li><a href="newsletters.html" title=""><span>Newsletters</span></a></li>
+				</ul>
+			</li>
+			<li class="sub"><a href="#" title="Nos Produits"><span>Produits</span></a>
+				<ul>
+					<li><a href="gamme.html" title=""><span>Gamme</span></a></li>
+					<li><a href="catalogue.html" title=""><span>Catalogue</span></a></li>
+				</ul>
+			</li>
+			<li><a href="about.html" title="A Propos"><span>A propos</span></a></li>
+			<li><a href="contact.html" title="Page pour nous contacter"><span>Contact</span></a></li>
+		</ul>
+		<div id="div_lang">
+			<a href="index-eng.html"><img src="../DATA/IMAGES/icone-eng.png" alt="Anglais"/></a>
+			<a href="index.html"><img src="../DATA/IMAGES/icone-fr.png" alt="Français"/></a>
+		</div>
+	</nav>
+
+<!--div pour le corps de la page-->
+<div id="div_corps">
+<br><br>
+	<img class="produit1" src="../DATA/IMAGES/produit-3.png"> 
+	<div id="produit_1">
+		<h2>Chimiste – spécialité hydrocarbure</h2>
+		<p>Catherine Noakes</p>
+		<br>
+		<p>A dirigé plusieurs projets visant à améliorer les techniques d'extraction des hydrocarbures et a rédigé plusieurs articles traitant du raffinage de ces mêmes combustibles. </p>
+		<br>
+		<p>Professionnelle, rigoureuse et disposant de grandes capacité d'adaptation.
+Un atout pour toute entreprise désireuse de tirer le plus grand partie des énergies fossiles.</p>
+		<br>
+		<p>Disponible en français, anglais et portugais.</p>
+		<td class="prix">
+			<a href="javascript:alert('Cette offre n\'est plus disponible');" > Commander</a>
+		</td>
+		<br><br><br><br><br>
+	</div>
+	<br><br>
+	<img class="produit2" src="../DATA/IMAGES/produit-1.png">
+	<div id="produit_2">
+		<h2>Commercial</h2>
+		<p>Roger Hartley</p>
+		<br>
+		<p>10 ans d'expériences dans un grand nombres de secteurs d'activités (industrie textile, aéronautique, métallurgie, …). Autonome, organisé et ambitieux.</p>
+		<br>
+		<p>Idéal pour toute entreprise cherchant des commerciaux efficaces, prêt à tout pour vendres leurs produits.</p>
+		<br>
+		<p>Disponible en français, anglais et chinois.</p>
+		<td class="prix">
+			<a href="javascript:alert('Cette offre n\'est plus disponible');" > Commander</a>
+		</td>
+		<br><br><br><br><br>
+	</div>
+	<br><br>
+	<img class="produit3" src="../DATA/IMAGES/produit-2.png"> 
+	<div id="produit_3">
+		<h2>Maçon</h2>
+		<p>Edouard Juhl</p>
+		<br>
+		<p>15 ans dans le domaine de la construction dont 5 comme chef de chantier. Grande expérience dans la réalisation de façades, charpentes et sols.</p>
+		<br>
+		<p>Autoritaire et persévérant, il saura menez à bien tout vos projets de construction.</p>
+		<br>
+		<p>Disponible en français et russe.</p>
+		<td class="prix">
+			<a href="javascript:alert('Cette offre n\'est plus disponible);" > Commander</a>
+		</td>
+		<br><br><br><br><br>
+	</div>
+	<br><br>
+</div>
+
+	<!--div pour le pied de page-->
+	<div id="div_footer">
+		<a href="https://twitter.com/twitter" class="twitter-follow-button" data-show-count="false" data-lang="fr">Suivre @twitter</a>
+		<iframe align="center" src="http://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;width&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;share=true&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:40px;" allowTransparency="true"></iframe>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		<br>
+		<a href="http://jigsaw.w3.org/css-validator/validator?uri=konstantin-sidorenko.fr%2FSTYLE%2Fstyle.css&profile=css3&usermedium=all&warning=1&vextwarning=">
+			<img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS Valide !" />
+		</a>
+		<a href="#"><img id="bouton_haut"src="../DATA/IMAGES/haut.png" alt=""></a> 
+		<br>
+		<p>&copy; Tous droits réservés 2014 rentaman.fr</p><a href="mentions.html"> Mentions légales </a>
+	</div>
+
+</body>
+</html>
