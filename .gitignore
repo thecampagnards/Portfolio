@@ -66,5 +66,7 @@ jspm_packages
 
 ### PERSO
 
-dist
+dist/index.html
+dist/main.js
+dist/style.css
 src/css/portofolio

@@ -1,0 +1,285 @@
+
+$color-rouge-primaire: #E53935
+$color-gris-fond: #EEEEEE
+$color-blanc-fond: #FAFAFA
+$color-noir-defaut: #464646
+$font-important: abyssopelagic
+$font-normal: robotoregular
+$taille-mobile: 990px
+
+@font-face
+  font-family: 'abyssopelagic'
+  src: url('fonts/abyssopelagic.otf')
+
+@font-face
+    font-family: 'robotoregular'
+    src: url('fonts/Roboto-Regular-webfont.eot')
+    src: url('fonts/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/Roboto-Regular-webfont.woff') format('woff'), url('fonts/Roboto-Regular-webfont.ttf') format('truetype'), url('fonts/Roboto-Regular-webfont.svg#robotoregular') format('svg')
+    font-weight: normal
+    font-style: normal
+
+
+html, body, #container, #menu-desktop, #menu-mobile
+  height: 100%
+
+#page
+  height: 100%
+  .row
+    margin: 0
+  section,header
+    min-height: 100%
+    overflow: hidden
+    @media screen and (max-width: $taille-mobile)
+      text-align: center
+      #block-header
+        top: 50%
+        transform: translateY(-50%)
+    h2
+      text-align: center
+      font-size: 70px
+      margin: 0
+      padding: 50px 0
+  section:nth-of-type(odd)
+    background-color: $color-gris-fond
+  section:nth-of-type(even)
+    background-color: $color-blanc-fond
+
+  header
+    background-image: url('img/header.jpg')
+    background-repeat: no-repeat
+    background-position: center center
+    background-size: cover
+    background-color: $color-noir-defaut
+    width: 100%
+    h1.title
+      font-size: 100px
+      border-bottom: 1px $color-rouge-primaire solid
+      text-align: right
+      @media screen and (max-width: $taille-mobile)
+        text-align: center
+    h2.subtitle
+      font-size: 50px
+    div#block-header
+      position: absolute
+      top: -500px
+      right: 10px
+
+  section#competences
+    .row
+      .center-circle
+        width: 200px
+        height: 200px
+        margin: auto
+
+  section#experiences
+    #map-experiences
+      width: 100%
+      position: relative
+      text-align: center
+      #map
+        display: inline-block
+        position: relative
+        width: 60%
+        max-width: 600px
+        @media screen and (max-width: $taille-mobile)
+          width: 80%
+        span
+          text-align: initial
+      #information-experience
+        box-shadow: 5px 5px 20px #888888
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        right: -300px
+        z-index: 5
+        ul#liste-experiences
+          list-style: none
+          margin: 0
+          padding: 0
+          display: inline-block
+          li
+            height: 75px
+            width: 75px
+            line-height: 75px
+            text-align: center
+            border-left: 5px solid rgba($color-rouge-primaire, 0.7)
+            border-right: 5px solid rgba($color-rouge-primaire, 0.7)
+            border-top: 5px solid rgba($color-rouge-primaire, 0.7)
+            a img
+              vertical-align: middle
+              width: 60px
+            span
+              display: none
+          li:nth-of-type(odd)
+            background-color: $color-gris-fond
+          li:nth-of-type(even)
+            background-color: $color-blanc-fond
+          li:last-of-type
+            border-bottom: 5px solid rgba($color-rouge-primaire, 0.7)
+        #texte-experience
+          width: 300px
+          height: 395px
+          display: inline-block
+          vertical-align: top
+          /*border-right: 5px solid rgba($color-rouge-primaire, 0.7)*/
+          border-top: 5px solid rgba($color-rouge-primaire, 0.7)
+          border-bottom: 5px solid rgba($color-rouge-primaire, 0.7)
+
+  .title, .subtitle
+    font-weight: 500
+    font-family: $font-important
+    color: $color-rouge-primaire
+  .cercle
+    margin: auto
+    background-color: $color-rouge-primaire
+    width: 200px
+    height: 200px
+    -moz-border-radius: 50%
+    -webkit-border-radius: 50%
+    border-radius: 50%
+    display: table-cell
+    text-align: center
+    vertical-align: middle
+    color: white
+    i
+      font-size: 60px
+  p
+    text-align: center
+    font-family: $font-normal
+  .gridzyClassic .gridzyItemContent>img+*, .gridzyClassicLight .gridzyItemContent>img+*
+    height: 100%
+
+  .reverse
+    unicode-bidi: bidi-override
+    direction: rtl
+
+#menu-desktop
+  width: 0px
+  position: fixed
+  left: 0
+  top: 0
+  background-color: rgba($color-rouge-primaire,0.8)
+  z-index: 5
+  ul
+    color: white
+    list-style-type: none
+    text-align: center
+    font-size: 30px
+    padding: 0
+    width: inherit
+  ul.menu-top
+
+  nav.menu-middle
+    position: fixed
+    top: 50%
+    transform: translateY(-50%)
+    display: none
+    min-width: 300px
+    margin-left: 50px
+    li
+      text-align: left
+      margin-bottom: 20%
+      a
+        color: white
+        text-decoration: none
+        font-family: $font-important
+        font-weight: bold
+        letter-spacing: 4px
+  ul.menu-bottom
+    position: fixed
+    bottom: 0
+    a
+      color: white
+      text-decoration: none
+
+#menu-desktop,#menu-mobile
+  z-index: 5
+  position: fixed
+  left: 0
+  top: 0
+  .hamburger
+    display: block
+    top: 10px
+    left: calc( 50% - 15px )
+    position: relative
+    width: 30px
+    height: 30px
+    font-size: 0
+    padding: 0
+    margin: 0
+    appearance: none
+    box-shadow: none
+    border-radius: none
+    border: none
+    cursor: pointer
+    transition: background 0.3s
+    background-color: Transparent
+    span
+      display: block
+      height: 2px
+      background: white
+      transition: background 0s 0.3s
+    span::before,span::after
+      position: relative
+      display: block
+      left: 0
+      width: 100%
+      height: 2px
+      background-color: #fff
+      content: ""
+      transition-duration: 0.3s, 0.3s
+      transition-delay: 0.3s, 0s
+    span::before
+      top: -10px
+      transition-property: top, transform
+    span::after
+      bottom: -10px
+      transition-property: bottom, transform
+  .hamburger:focus
+    outline: none
+  .hamburger.is-active
+    span
+      background: none
+    span::before
+      top: 0
+      transform: rotate(45deg)
+    span::after
+      bottom: 0
+      transform: rotate(-45deg)
+    span::before, span::after
+      transition-delay: 0s, 0.3s
+
+#menu-mobile
+  display: none
+  background-color: rgba($color-rouge-primaire,0.5)
+  width: 100%
+  height: 0
+  overflow: hidden
+  ul, ul a
+    color: white
+    list-style-type: none
+    text-align: center
+    font-size: 30px
+    padding: 0
+    width: inherit
+    text-decoration: none
+    color: white
+    font-family: $font-important
+    font-weight: bold
+    letter-spacing: 4px
+  .menu-block ul li
+    margin-top: 10%
+  ul.menu-control
+    transform: translateY(-50%)
+    li
+      width: 50%
+      i
+        font-size: 50px
+  ul.menu-control li:first-of-type
+    float: right
+
+  @media screen and (max-width: $taille-mobile)
+    display: block
+#menu-desktop
+  @media screen and (max-width: $taille-mobile)
+    display: none
