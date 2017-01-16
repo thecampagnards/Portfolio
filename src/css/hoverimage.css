@@ -29,7 +29,7 @@
 	width: 48%;
 	background: #3085a3;
 	text-align: center;
-	cursor: pointer;
+	/*cursor: pointer;*/
   height: 250px;
 }
 
@@ -125,7 +125,7 @@ figure.effect-zoe:hover p.icon-links a:focus {
 
 figure.effect-zoe p.description {
 	position: absolute;
-	bottom: 8em;
+	bottom: 3.5em;
 	padding: 2em;
 	color: #fff;
 	text-transform: none;
@@ -183,6 +183,10 @@ figure.effect-zoe:hover p.icon-links a {
 figure.effect-zoe:hover h2 {
 	-webkit-transition-delay: 0.05s;
 	transition-delay: 0.05s;
+}
+
+figure.effect-zoe:hover img {
+	opacity: 0.2;
 }
 
 figure.effect-zoe:hover p.icon-links a:nth-child(3) {

@@ -13,18 +13,20 @@
     "gulp-autoprefixer": "latest",
     "gulp-clean-css": "latest",
     "gulp-concat": "latest",
+    "gulp-connect": "latest",
     "gulp-cssbeautify": "latest",
     "gulp-csscomb": "latest",
     "gulp-csso": "latest",
     "gulp-htmlmin": "latest",
+    "gulp-image-resize": "^0.11.0",
     "gulp-less": "latest",
-    "gulp-connect": "latest",
+    "gulp-livereload": "latest",
     "gulp-load-plugins": "latest",
     "gulp-minify": "latest",
     "gulp-rename": "latest",
     "gulp-sass": "latest",
+    "gulp-uglify": "latest",
     "gulp-watch": "latest",
-    "gulp-livereload": "latest",
     "st": "latest"
   }
 }
