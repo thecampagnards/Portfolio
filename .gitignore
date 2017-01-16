@@ -69,8 +69,6 @@ jspm_packages
 dist/*
 !dist/fonts
 !dist/img
-dist/img/projets
-dist/img/experiences
 !dist/php
 
 src/css/compiled
