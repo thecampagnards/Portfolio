@@ -35,8 +35,8 @@ gulp.task('minify-css', function () {
 gulp.task('resize-image-projet', function () {
   gulp.src(source + '/img/projets/*.{png,jpg}')
     .pipe(imageResize({
-      width: 465,
-      height: 361
+      width: 480,
+      height: 250
     }))
     .pipe(gulp.dest(destination + '/img/projets/'))
 })
