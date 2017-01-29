@@ -72,5 +72,7 @@ dist/*
 dist/img/projets/*
 dist/img/experiences
 !dist/php
+!dist/Sidorenko_Konstantin_CV.pdf
+!dist/Sidorenko_Konstantin_CV.psd
 
 src/css/compiled
