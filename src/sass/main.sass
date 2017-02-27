@@ -44,6 +44,8 @@ $font-texte : opensansregular
   font-style: normal
 html,body
   min-width: 600px
+  span:lang(ru), span:lang(en)
+    display: none
 body
   zoom: 1
 header#accueil
@@ -137,6 +139,8 @@ section, header
       h3
         color: $couleur-autre
         margin-bottom: 10px
+        :lang(ru)
+          font-size: 0.8em
       i
         height: 90px
         color: $couleur-autre-fonce
@@ -204,12 +208,12 @@ section, header
 
   &#experiences
     .my-photo
-      height: 210px
+      height: 300px
     .events-content
       @media only screen and (max-width: 1199px)
-        height: 390px
+        height: 600px
       @media only screen and (max-width: 750px)
-        height: 450px
+        height: 600px
 
       em
         display: block
@@ -257,11 +261,15 @@ header#accueil
       color: $couleur-sombre
       font-size: 6em
       text-transform: uppercase
+      :lang(ru)
+        font-size: 0.6em
       @media only screen and (max-width: 880px)
         font-size: 4em
 
     h2
       font-size: 4em
+      :lang(ru)
+        font-size: 0.35em
       @media only screen and (max-width: 880px)
         font-size: 2em
     h3
@@ -289,6 +297,19 @@ footer
 
 nav,.menu
   position: fixed
+  .langue
+    position: absolute
+    top: 0
+    right: 20px
+    display: inherit
+    li
+      margin-left: 10px
+      font-size: 0.5em
+      a
+        &:hover
+          cursor: pointer
+        &.active
+          text-decoration: underline
   ul
     list-style-type: none
 

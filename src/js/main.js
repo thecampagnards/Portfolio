@@ -1,12 +1,37 @@
 ;(function (window) {
   'use strict'
 
+  var userLang = navigator.language || navigator.userLanguage
+  var lang = userLang.split('-')[0]
+  if (lang !== undefined && $.inArray(lang, ['en', 'ru'])) {
+    changeLang(lang)
+  }
+
+  function changeLang (area) {
+    $('.btn-ru, .btn-fr, .btn-en').removeClass('active')
+    $('.btn-' + area).addClass('active')
+    $('span:lang(fr)').hide()
+    $('span:lang(en)').hide()
+    $('span:lang(ru)').hide()
+    $('span:lang(' + area + ')').show()
+  }
+
+  var Areas = ['.btn-ru', '.btn-fr', '.btn-en']
+  for (var i = 0; i < Areas.length; i++) {
+    (function (area) {
+      $(area).click(function (e) {
+        e.preventDefault()
+        changeLang(area.split('-')[1])
+      })
+    })(Areas[i])
+  }
+
   function reverse (s) {
     return s.split('').reverse().join('')
   }
 
-  $('.add-mail').attr('href', 'mailto:'+reverse('rf.egnaro@oknerodis.nitnatsnok'))
-  $('.add-tel').attr('href', 'tel:'+reverse('22361111633+'))
+  $('.add-mail').attr('href', 'mailto:' + reverse('rf.egnaro@oknerodis.nitnatsnok'))
+  $('.add-tel').attr('href', 'tel:' + reverse('22361111633+'))
 
   $('#formcontact').submit(function (e) {
     e.preventDefault()
@@ -102,4 +127,16 @@
     })
     return false
   })
+
+  $('.btn-ru, .btn-fr, .btn-en').click(function (e) {
+    e.preventDefault()
+    Menu.activateMenu()
+    $('nav.nav-menu').animate({
+      left: '-100%'
+    }, {
+      duration: 1000
+    })
+    return false
+  })
+
 })(window)
