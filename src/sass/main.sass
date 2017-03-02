@@ -295,24 +295,31 @@ footer
       margin: 10px
       font-size: 1.3em
 
-nav,.menu
+nav,.menu, .langue
   position: fixed
+
   .langue
-    position: absolute
-    top: 0
-    right: 20px
+    top: 15px
+    right: 0
     display: inherit
+    background: rgba(250,250,250,.8)
+    padding: 10px 10px 10px 0
+    &.big
+      padding: 20px 20px
+      li
+        font-size: 0.4em
     li
       margin-left: 10px
-      font-size: 0.5em
+      font-size: 0.25em
       a
+        color: $couleur-autre-fonce
+        line-height: inherit
         &:hover
           cursor: pointer
         &.active
           text-decoration: underline
   ul
     list-style-type: none
-
 .menu
   z-index: 1000
   top: 15px

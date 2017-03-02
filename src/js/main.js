@@ -128,7 +128,7 @@
     return false
   })
 
-  $('.btn-ru, .btn-fr, .btn-en').click(function (e) {
+/* $('.btn-ru, .btn-fr, .btn-en').click(function (e) {
     e.preventDefault()
     Menu.activateMenu()
     $('nav.nav-menu').animate({
@@ -137,6 +137,15 @@
       duration: 1000
     })
     return false
-  })
+  }) */
 
+  $(document).on('scroll', function () {
+    var scrollPos = $(document).scrollTop()
+    var refElement = $('#accueil')
+    if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() - 60 > scrollPos) {
+      $('nav .langue').switchClass('', 'big', 500)
+    } else {
+      $('nav .langue').switchClass('big', '', 500)
+    }
+  })
 })(window)
