@@ -1,9 +1,10 @@
-
-
-
 language: node_js
+node_js:
+  - "iojs"
+  - "7"
 
 install:
+- nvm install stable
 - npm install -g gulp-cli
 - sudo apt-get install -y imagemagick graphicsmagick zip
 
@@ -26,3 +27,4 @@ deploy:
   on:
     repo: thecampagnards/Portfolio
     branch: v2
+  skip_cleanup: true
