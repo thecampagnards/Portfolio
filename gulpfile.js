@@ -75,7 +75,7 @@ gulp.task('watch', ['server'], function () {
   gulp.watch(source + '/html/*.html', ['minify-html'])
 })
 
-gulp.task('default', ['watch', 'sass', 'minify-css', 'minify-js', 'minify-html', 'resize-image-projet', 'resize-image-experience'])
+gulp.task('default', ['sass', 'minify-css', 'minify-js', 'minify-html', 'resize-image-projet', 'resize-image-experience'])
 
 gulp.task('server', function (done) {
   http.createServer(
