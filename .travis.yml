@@ -12,7 +12,7 @@ before_script:
 
 script:
 - gulp
-- zip -r -j portfolio-${TRAVIS_TAG}.zip dist
+- zip -r portfolio-${TRAVIS_TAG}.zip dist/*
 
 before_deploy:
 - git config --global user.email "github@travis-ci.org"
