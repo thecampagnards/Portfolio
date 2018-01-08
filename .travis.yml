@@ -12,7 +12,7 @@ before_script:
 
 script:
 - gulp
-- zip -r portfolio-${TRAVIS_TAG}.zip dist/*
+- cd dist && zip -x "Sidorenko_Konstantin_CV.psd" "header.psd" "header-." -r portfolio-${TRAVIS_TAG}.zip *
 
 before_deploy:
 - git config --global user.email "github@travis-ci.org"
@@ -22,7 +22,7 @@ deploy:
   provider: releases
   api_key:
     secure: RrjtgLLMN9dGwLbnTGLMxp4HYYHbciqwGFozovFlFd96cgDE17udeW2hUXGBP9uw2P0nms6j2n874Hzat0PEYJ6MZepJZLUGQ4aVDZszYnqtNGA8FEUbSCf5rMtFNZcd8gcMg4gw0CZ5CQN/UfWFWFiYSMgTD+fxmk4C1F43OLLizUkyOayC6VkFk3EU6BNAHl76iv9IQp9cg3WfgtYAll5e/dji+n5G1bjhe7yaWrtVFrCusHJBk2bZCk/Gw1FV2sYrpEbMlzkx+OjQau4LgnQvT32XPsf/BXLa5cfUl2rhzVpeqdyvA4xhyYrFDEHSXrPtG1mVARhgMISki/Abshc6brPEJ/6VRykjgdcTLHeaYU7qfPcia2EHbdbQgogYMDrWdLUz2+6Sj3lC8efBVRzRQcIPpsYyA+6i7IegSfTLd1+bfqqaE4aYZUGjRg3SlEjBd+2SKBrNVMM/xODTOll081X2Q7nxAalOS/3ci9SmrC1GeU0DjKVVrkINIr5ZRm6pkRtW0nMPApOOvA9dEWalSMHZ1WGYsBqu5Hxnuu2Ih4R1+XlStY6sDTv5JBBsFNupCaes9wPeJlHrEZDaLXWtEfni16PYrlJyd0908jbHwgQvFiPDBUVnpZx/6mg1j5Zytz5owv3fnPqRQ+1purkY/P6qXxXPOmJEukPCxYg=
-  file: portfolio-${TRAVIS_TAG}.zip
+  file: dist/portfolio-${TRAVIS_TAG}.zip
   on:
     tags: true
   skip_cleanup: true
