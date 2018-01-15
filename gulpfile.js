@@ -51,7 +51,7 @@ gulp.task('resize-image-experience', function () {
 gulp.task('resize-image-sport', function () {
   gulp.src(source + '/img/sport/*.{png,jpg}')
     .pipe(imageResize({
-      height: 480
+      width: 480
     }))
     .pipe(gulp.dest(destination + '/img/sport/'))
 })

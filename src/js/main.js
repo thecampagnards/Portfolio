@@ -3,6 +3,10 @@
 
   $('.slick').slick();
 
+  $(window).on('resize orientationchange', function() {
+    $('.slick').slick('resize')
+  })
+
   var userLang = navigator.language || navigator.userLanguage
   var lang = userLang.split('-')[0]
   if (lang !== undefined && $.inArray(lang, ['en', 'ru'])) {
