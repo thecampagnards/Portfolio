@@ -26,3 +26,4 @@ deploy:
   on:
     tags: true
   skip_cleanup: true
+  script: curl http://travis.konstantin-sidorenko.fr/?token=keoLGRTiTaEPZnVJ9sQCoeuThiM28WdTCjESf5f9VBvyJx5F52QwdCC0do6W

@@ -23,7 +23,7 @@ gulp.task('sass', function () {
     .pipe(gulp.dest(source + '/css/compiled'))
 })
 
-gulp.task('minify-css', function () {
+gulp.task('minify-css', ['sass'], function () {
   // ordre de preference dans un tableau
   return gulp.src([source + '/css/*.css', source + '/css/compiled/*.css'])
     .pipe(concat('style.css'))
@@ -46,6 +46,14 @@ gulp.task('resize-image-experience', function () {
       height: 250
     }))
     .pipe(gulp.dest(destination + '/img/experiences/'))
+})
+
+gulp.task('resize-image-sport', function () {
+  gulp.src(source + '/img/sport/*.{png,jpg}')
+    .pipe(imageResize({
+      height: 480
+    }))
+    .pipe(gulp.dest(destination + '/img/sport/'))
 })
 
 gulp.task('minify-js', function () {
@@ -75,7 +83,7 @@ gulp.task('watch', ['server'], function () {
   gulp.watch(source + '/html/*.html', ['minify-html'])
 })
 
-gulp.task('default', ['sass', 'minify-css', 'minify-js', 'minify-html', 'resize-image-projet', 'resize-image-experience'])
+gulp.task('default', ['sass', 'minify-css', 'minify-js', 'minify-html', 'resize-image-projet', 'resize-image-experience', 'resize-image-sport'])
 
 gulp.task('server', function (done) {
   http.createServer(

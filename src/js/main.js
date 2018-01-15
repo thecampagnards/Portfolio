@@ -1,6 +1,8 @@
 ;(function (window) {
   'use strict'
 
+  $('.slick').slick();
+
   var userLang = navigator.language || navigator.userLanguage
   var lang = userLang.split('-')[0]
   if (lang !== undefined && $.inArray(lang, ['en', 'ru'])) {
