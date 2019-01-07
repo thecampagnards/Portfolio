@@ -28,4 +28,4 @@ deploy:
   skip_cleanup: true
 
 after_deploy:
- - curl http://travis.konstantin-sidorenko.fr/?token=keoLGRTiTaEPZnVJ9sQCoeuThiM28WdTCjESf5f9VBvyJx5F52QwdCC0do6W
+ - curl http://travis.konstantinsidorenko.fr/?token=keoLGRTiTaEPZnVJ9sQCoeuThiM28WdTCjESf5f9VBvyJx5F52QwdCC0do6W

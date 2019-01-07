@@ -23,14 +23,14 @@ gulp.task('sass', function () {
     .pipe(gulp.dest(source + '/css/compiled'))
 })
 
-gulp.task('minify-css', ['sass'], function () {
+gulp.task('minify-css', gulp.parallel('sass', function () {
   // ordre de preference dans un tableau
   return gulp.src([source + '/css/*.css', source + '/css/compiled/*.css'])
     .pipe(concat('style.css'))
     .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(gulp.dest(destination))
     .pipe(livereload())
-})
+}))
 
 gulp.task('resize-image-projet', function () {
   gulp.src(source + '/img/projets/*.{png,jpg}')
@@ -75,18 +75,19 @@ gulp.task('minify-html', function () {
     .pipe(livereload())
 })
 
-gulp.task('watch', ['server'], function () {
-  livereload.listen({ basePath: 'dist' })
-  gulp.watch(source + '/sass/*.sass', ['sass'])
-  gulp.watch([source + '/css/*.css', source + '/css/compiled/*.css'], ['minify-css'])
-  gulp.watch(source + '/js/*.js', ['minify-js'])
-  gulp.watch(source + '/html/*.html', ['minify-html'])
-})
-
-gulp.task('default', ['sass', 'minify-css', 'minify-js', 'minify-html', 'resize-image-projet', 'resize-image-experience', 'resize-image-sport'])
-
 gulp.task('server', function (done) {
   http.createServer(
     st({ path: __dirname + '/dist', index: 'index.html', cache: false })
   ).listen(8081, done)
 })
+
+gulp.task('watch', gulp.parallel('server', function () {
+  livereload.listen({ basePath: 'dist' })
+  gulp.watch(source + '/sass/*.sass', gulp.series('sass'))
+  gulp.watch([source + '/css/*.css', source + '/css/compiled/*.css'], gulp.series('minify-css'))
+  gulp.watch(source + '/js/*.js', gulp.series('minify-js'))
+  gulp.watch(source + '/html/*.html', gulp.series('minify-html'))
+}))
+
+gulp.task('default', gulp.parallel('sass', 'minify-css', 'minify-js', 'minify-html', 'resize-image-projet', 'resize-image-experience', 'resize-image-sport'))
+

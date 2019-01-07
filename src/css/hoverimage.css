@@ -30,15 +30,26 @@
 	background: #3085a3;
 	text-align: center;
 	/*cursor: pointer;*/
-  height: 250px;
+  	height: 250px;
+  	display: flex;
+}
+
+.grid figure > span {
+	display: flex;
+	height: 100%;
+	width: 100%;
+	background-color: white;
+}
+
+figure.effect-zoe:hover > span {
+	background: none;
 }
 
 .grid figure img {
 	position: relative;
-	display: block;
-	min-height: 100%;
 	max-width: 100%;
 	opacity: 0.8;
+	margin: auto;
 }
 
 .grid figure figcaption {

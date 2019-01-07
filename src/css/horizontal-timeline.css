@@ -84,6 +84,11 @@ Main Components
   transform: translateZ(0);
   outline:0;
 }
+
+.cd-horizontal-timeline .events a span > span{
+  font-size: 15px;
+}
+
 .cd-horizontal-timeline .events a::after {
   /* this is used to create the event spot */
   content: '';
