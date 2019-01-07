@@ -23,7 +23,7 @@ gulp.task('sass', function () {
     .pipe(gulp.dest(source + '/css/compiled'))
 })
 
-gulp.task('minify-css', gulp.parallel('sass', function () {
+gulp.task('minify-css', gulp.series('sass', function () {
   // ordre de preference dans un tableau
   return gulp.src([source + '/css/*.css', source + '/css/compiled/*.css'])
     .pipe(concat('style.css'))
