@@ -33,7 +33,7 @@ gulp.task('minify-css', gulp.parallel('sass', function () {
 }))
 
 gulp.task('resize-image-projet', function () {
-  gulp.src(source + '/img/projets/*.{png,jpg}')
+  return gulp.src(source + '/img/projets/*.{png,jpg}')
     .pipe(imageResize({
       width: 480
     }))
@@ -41,7 +41,7 @@ gulp.task('resize-image-projet', function () {
 })
 
 gulp.task('resize-image-experience', function () {
-  gulp.src(source + '/img/experiences/*.{png,jpg}')
+  return gulp.src(source + '/img/experiences/*.{png,jpg}')
     .pipe(imageResize({
       height: 250
     }))
@@ -49,7 +49,7 @@ gulp.task('resize-image-experience', function () {
 })
 
 gulp.task('resize-image-sport', function () {
-  gulp.src(source + '/img/sport/*.{png,jpg}')
+  return gulp.src(source + '/img/sport/*.{png,jpg}')
     .pipe(imageResize({
       width: 480
     }))
@@ -90,4 +90,3 @@ gulp.task('watch', gulp.parallel('server', function () {
 }))
 
 gulp.task('default', gulp.parallel('sass', 'minify-css', 'minify-js', 'minify-html', 'resize-image-projet', 'resize-image-experience', 'resize-image-sport'))
-
