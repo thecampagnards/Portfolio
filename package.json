@@ -10,7 +10,6 @@
   "license": "ISC",
   "devDependencies": {
     "gulp": "latest",
-    "gulp-jpeg-2000": "latest",
     "gulp-autoprefixer": "latest",
     "gulp-clean-css": "latest",
     "gulp-concat": "latest",
@@ -20,6 +19,7 @@
     "gulp-csso": "latest",
     "gulp-htmlmin": "latest",
     "gulp-image-resize": "latest",
+    "gulp-jpeg-2000": "latest",
     "gulp-less": "latest",
     "gulp-livereload": "latest",
     "gulp-load-plugins": "latest",
@@ -28,6 +28,7 @@
     "gulp-sass": "latest",
     "gulp-uglify": "latest",
     "gulp-watch": "latest",
+    "gulp-webp": "^4.0.0",
     "st": "latest"
   }
 }

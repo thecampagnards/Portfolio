@@ -13,6 +13,7 @@ var st = require('st')
 var uglify = require('gulp-uglify')
 var imageResize = require('gulp-image-resize')
 var jp2 = require('gulp-jpeg-2000')
+var webp = require('gulp-webp')
 
 var source = './src' // dossier de travail
 var destination = './dist' // dossier à livrer
@@ -38,7 +39,8 @@ gulp.task('resize-image-projet', function () {
     .pipe(imageResize({
       width: 480
     }))
-    .pipe(jp2())
+    //.pipe(webp())
+    //.pipe(jp2())
     .pipe(gulp.dest(destination + '/img/projets/'))
 })
 
@@ -47,7 +49,8 @@ gulp.task('resize-image-experience', function () {
     .pipe(imageResize({
       height: 250
     }))
-    .pipe(jp2())
+    //.pipe(webp())
+    //.pipe(jp2())
     .pipe(gulp.dest(destination + '/img/experiences/'))
 })
 
@@ -56,7 +59,8 @@ gulp.task('resize-image-sport', function () {
     .pipe(imageResize({
       width: 480
     }))
-    .pipe(jp2())
+    //.pipe(webp())
+    //.pipe(jp2())
     .pipe(gulp.dest(destination + '/img/sport/'))
 })
 
