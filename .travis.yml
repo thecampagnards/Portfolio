@@ -1,31 +1,27 @@
 language: node_js
 node_js:
   - "8"
-
 install:
-- nvm install stable
-- npm install -g gulp-cli
-- sudo apt-get install -y imagemagick graphicsmagick zip
-
+  - nvm install stable
+  - npm install -g gulp-cli
+  - sudo apt-get install -y imagemagick graphicsmagick zip
 before_script:
-- npm install
-
+  - npm install
 script:
-- gulp
-- cd dist && zip -x "Sidorenko_Konstantin_CV.psd" "img/header.psd" "img/header-*.*" "img/header_*.*" -r portfolio-${TRAVIS_TAG}.zip *
-
+  - gulp
+  - cd dist && zip -x "Sidorenko_Konstantin_CV_old.psd" "Sidorenko_Konstantin_CV_old.pdf"
+    "Sidorenko_Konstantin_CV.docx" "img/header.psd" "img/header-*.*" "img/header_*.*"
+    -r portfolio-${TRAVIS_TAG}.zip *
 before_deploy:
-- git config --global user.email "github@travis-ci.org"
-- git config --global user.name "Travis CI"
-
+  - git config --global user.email "github@travis-ci.org"
+  - git config --global user.name "Travis CI"
 deploy:
   provider: releases
-  api_key:
-    secure: RrjtgLLMN9dGwLbnTGLMxp4HYYHbciqwGFozovFlFd96cgDE17udeW2hUXGBP9uw2P0nms6j2n874Hzat0PEYJ6MZepJZLUGQ4aVDZszYnqtNGA8FEUbSCf5rMtFNZcd8gcMg4gw0CZ5CQN/UfWFWFiYSMgTD+fxmk4C1F43OLLizUkyOayC6VkFk3EU6BNAHl76iv9IQp9cg3WfgtYAll5e/dji+n5G1bjhe7yaWrtVFrCusHJBk2bZCk/Gw1FV2sYrpEbMlzkx+OjQau4LgnQvT32XPsf/BXLa5cfUl2rhzVpeqdyvA4xhyYrFDEHSXrPtG1mVARhgMISki/Abshc6brPEJ/6VRykjgdcTLHeaYU7qfPcia2EHbdbQgogYMDrWdLUz2+6Sj3lC8efBVRzRQcIPpsYyA+6i7IegSfTLd1+bfqqaE4aYZUGjRg3SlEjBd+2SKBrNVMM/xODTOll081X2Q7nxAalOS/3ci9SmrC1GeU0DjKVVrkINIr5ZRm6pkRtW0nMPApOOvA9dEWalSMHZ1WGYsBqu5Hxnuu2Ih4R1+XlStY6sDTv5JBBsFNupCaes9wPeJlHrEZDaLXWtEfni16PYrlJyd0908jbHwgQvFiPDBUVnpZx/6mg1j5Zytz5owv3fnPqRQ+1purkY/P6qXxXPOmJEukPCxYg=
   file: portfolio-${TRAVIS_TAG}.zip
   on:
     tags: true
   skip_cleanup: true
-
+  token:
+    secure: Il9V5DVKEC+DsV4tXnV6rj1bnHHARYtqKzfKu4H4MDLqYxEM2qajy7stU4LBPKkphaLyM1IzAHnmasazadF65frf1F/m2KVZ14laGpdpXdrTm6Or8xRoIHTUf5L9aT/qnckImGsYoI6I7qEupxYjslqrCAw+oFqfwAc0wAYMM7+UKS71Z/TwiyKhsTqgOcg+o8XE4KWP7YMRx7xY8qxYPtB/4/47hU8uz1N+a7MpFCv9281NKNkoEDjyrxWkK1OfT6B5UUFrpePxDonOGPECvuSi+hwa8r4ny11HKDms86lagNbR9qj4RVgxa0803nfol04yP3Ihw4L0MJkDMMVzls4gO9A+r4oTnhBoNIfStP0rdfmY46pVKgb096oqlwOGZ/kPM9mZgbNzv4YbW51gkbicwEN3k+3+x4z8/B5zu2tbEKhuwA7WE+qoYRa4CefdW2Vcg0rkeWR8Hf9RV/7o6DhLom0YH1Wzv8onB4mTz8p9dOse39B3feMll9eWE1rhMSUUfWSMBTRRqXtSYTEXvqafT2aamBOCFf6qpuvnzVK9MK4JGtCFCVr2b/TxCua3USTUkNWQqrm9bt+XziNmcEhsB3MGPq2LqUJOU5D/c83J5gdJj/mz7vsdkGkuS/xxydxQ/kBBJR5Dw7cvrj6+TK4xoQA3M+Jjit4zEfTyY6M=
 after_deploy:
- - curl http://travis.konstantinsidorenko.fr/?token=keoLGRTiTaEPZnVJ9sQCoeuThiM28WdTCjESf5f9VBvyJx5F52QwdCC0do6W
+  - curl http://travis.konstantinsidorenko.fr/?token=keoLGRTiTaEPZnVJ9sQCoeuThiM28WdTCjESf5f9VBvyJx5F52QwdCC0do6W
