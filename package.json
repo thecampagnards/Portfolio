@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "sass": "latest",
     "gulp": "latest",
     "gulp-autoprefixer": "latest",
     "gulp-clean-css": "latest",
@@ -28,7 +29,7 @@
     "gulp-sass": "latest",
     "gulp-uglify": "latest",
     "gulp-watch": "latest",
-    "gulp-webp": "^4.0.0",
+    "gulp-webp": "latest",
     "st": "latest"
   }
 }
