@@ -74,6 +74,8 @@ dist/img/experiences
 dist/img/sport
 !dist/php
 !dist/Sidorenko_Konstantin_CV.pdf
-!dist/Sidorenko_Konstantin_CV.psd
+!dist/Sidorenko_Konstantin_CV_old.pdf
+!dist/Sidorenko_Konstantin_CV_old.psd
+!dist/Sidorenko_Konstantin_CV.docx
 
 src/css/compiled
